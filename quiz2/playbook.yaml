@@ -1,0 +1,44 @@
+---
+- name: Quiz2 Playbook
+  hosts: target
+
+  tasks:
+  - name: Change MOTD in /etc/motd
+    lineinfile:
+      path: '/etc/motd'
+      line: 'Ansible Managed by 1820120'
+      state: present
+
+
+
+- name: Quiz2 User
+  hosts: target
+
+  tasks: 
+  - name: Add user
+    ansible.builtin.user:
+      name: pmljosef-tip
+      password: AnsibleManaged
+
+
+
+
+- name: Quiz2 Group
+  hosts: target
+
+  tasks:
+  - name: Add group
+    ansible.buitin.group:
+      name: sysad2
+
+
+
+
+
+
+
+
+
+
+
+
